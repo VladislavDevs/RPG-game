@@ -1,0 +1,18 @@
+{
+  "name": "rpg-game",
+  "version": "1.0.0",
+  "description": "RPG game with characters and weapons",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "keywords": ["rpg", "game", "oop"],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
