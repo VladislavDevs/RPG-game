@@ -25,14 +25,13 @@ function main() {
     const winner = game.start();
     
     // Выводим статистику
-    console.log('\n📊 ИТОГОВАЯ СТАТИСТИКА:');
+    console.log('\nИТОГОВАЯ СТАТИСТИКА:');
     const stats = game.getStats();
     console.table(stats.ranking);
     
     return winner;
 }
 
-// Запускаем игру если файл выполняется напрямую
 if (require.main === module) {
     main();
 }

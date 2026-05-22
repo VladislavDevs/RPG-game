@@ -23,7 +23,7 @@ class Player {
 
     /**
      * Возвращает коэффициент удачливости
-     * @returns {number} значение от 0 до 1
+     * @returns {number}
      */
     getLuck() {
         const randomNumber = Math.random() * 100;

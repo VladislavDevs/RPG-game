@@ -22,12 +22,11 @@ describe('Dwarf Class', () => {
         for (let i = 1; i <= 5; i++) {
             dwarf.takeDamage(10);
         }
-        expect(dwarf.life).toBe(80); // 130 - 50
+        expect(dwarf.life).toBe(80);
         
-        // 6th hit - should be reduced
         const damageSpy = jest.spyOn(dwarf, 'takeDamage');
         dwarf.takeDamage(10);
-        expect(dwarf.life).toBe(75); // 80 - 5 (half)
+        expect(dwarf.life).toBe(75);
     });
 
     test('takeDamage normal on 6th hit when luck is low', () => {

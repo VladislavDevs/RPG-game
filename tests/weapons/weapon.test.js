@@ -35,14 +35,14 @@ describe('Weapon Base Class', () => {
         
         weapon.takeDamage(60);
         expect(weapon.durability).toBe(40);
-        expect(weapon.getDamage()).toBe(100); // 40 >= 30% of 100
+        expect(weapon.getDamage()).toBe(100);
     });
 
     test('getDamage returns half damage when durability <= 30%', () => {
         const weapon = new Weapon('Test', 100, 100, 1);
         weapon.takeDamage(71);
         expect(weapon.durability).toBe(29);
-        expect(weapon.getDamage()).toBe(50); // half damage
+        expect(weapon.getDamage()).toBe(50);
     });
 
     test('getDamage returns 0 when broken', () => {

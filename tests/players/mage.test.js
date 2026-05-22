@@ -23,8 +23,8 @@ describe('Mage Class', () => {
         
         mage.takeDamage(50);
         
-        expect(mage.life).toBe(45); // 70 - 25 (half of 50)
-        expect(mage.magic).toBe(68); // 80 - 12
+        expect(mage.life).toBe(45);
+        expect(mage.magic).toBe(68);
     });
 
     test('takeDamage does not reduce when magic <= 50', () => {

@@ -26,7 +26,7 @@ describe('Player Base Class', () => {
         for (let i = 0; i < 100; i++) {
             const luck = player.getLuck();
             expect(luck).toBeGreaterThanOrEqual(0);
-            expect(luck).toBeLessThanOrEqual(2); // Max: (100 + 10)/100 = 1.1
+            expect(luck).toBeLessThanOrEqual(2);
         }
     });
 
@@ -149,7 +149,6 @@ describe('Player Base Class', () => {
     });
 
     test('checkWeapon replaces broken weapon with knife', () => {
-        // Создаем меч и делаем его сломанным
         const sword = new Sword();
         sword.durability = 0;
         player.weapon = sword;
@@ -211,7 +210,7 @@ describe('Player Base Class', () => {
         
         player.tryAttack(enemy);
         
-        expect(takeAttackSpy).toHaveBeenCalledWith(20); // double damage
+        expect(takeAttackSpy).toHaveBeenCalledWith(20);
     });
 
     test('tryAttack damages weapon on use', () => {
@@ -244,7 +243,7 @@ describe('Player Base Class', () => {
         const enemy1 = new Player(0, 'Enemy1');
         const enemy2 = new Player(0, 'Enemy2');
         enemy1.life = 0;
-        enemy1.takeDamage(0); //确保死亡状态
+        enemy1.takeDamage(0);
         enemy2.life = 30;
         
         const players = [player, enemy1, enemy2];
