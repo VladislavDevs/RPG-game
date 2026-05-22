@@ -58,38 +58,25 @@ class Player {
         return this.life === 0;
     }
 
-    /**
-     * Движение влево
-     * @param {number} distance - дистанция движения
-     */
-    moveLeft(distance) {
-        const actualDistance = Math.min(distance, this.speed);
-        this.position = Math.max(0, this.position - actualDistance);
-        console.log(`${this.name} двигается влево на ${actualDistance}. Позиция: ${this.position}`);
-    }
+moveLeft(distance) {
+    const actualDistance = Math.min(Math.abs(distance), this.speed);
+    this.position = Math.max(0, this.position - actualDistance);
+    console.log(`${this.name} двигается влево на ${actualDistance}. Позиция: ${this.position}`);
+}
 
-    /**
-     * Движение вправо
-     * @param {number} distance - дистанция движения
-     */
-    moveRight(distance) {
-        const actualDistance = Math.min(distance, this.speed);
-        this.position += actualDistance;
-        console.log(`${this.name} двигается вправо на ${actualDistance}. Позиция: ${this.position}`);
-    }
+moveRight(distance) {
+    const actualDistance = Math.min(Math.abs(distance), this.speed);
+    this.position += actualDistance;
+    console.log(`${this.name} двигается вправо на ${actualDistance}. Позиция: ${this.position}`);
+}
 
-    /**
-     * Движение в заданном направлении
-     * @param {number} distance - дистанция (отрицательная - влево)
-     */
-    move(distance) {
-        if (distance < 0) {
-            this.moveLeft(Math.abs(distance));
-        } else {
-            this.moveRight(distance);
-        }
+move(distance) {
+    if (distance < 0) {
+        this.moveLeft(distance);
+    } else {
+        this.moveRight(distance);
     }
-
+}
     /**
      * Проверяет, заблокирована ли атака
      * @returns {boolean} true если заблокирована
